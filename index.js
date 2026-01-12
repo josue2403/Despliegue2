@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 
 // Archivo JSON que actúa como base de datos
 const DB_FILE = './users.json';
@@ -28,7 +28,7 @@ const writeDatabase = (data) => {
 // CRUD de usuarios
 app.get('/', (req, res) => {
     const msg = {
-        message: 'Servidor en ejecucion en el puerto 3000',
+        message: 'Servidor en ejecucion en el puerto 4000',
         status: 200
     }
     res.json(msg);

@@ -112,15 +112,20 @@ app.get('/users/:id', (req, res) => {
 });
 
 // Iniciar el servidor
-app.listem(PORT, '0.0.0.0', () => {
+// ... (resto del código anterior igual)
+
+// Iniciar el servidor
+// CAMBIO: Se cambió 'listem' por 'listen'
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
 });
 
-module.exports=app;
-//Iniciar el servidor
-if(require.main===module){
-    app.listem(PORT, '0.0.0.0',()=>{
-        console.log('Servidor corriendo en http://0.0.0.0${PORT}')
+module.exports = app;
 
-    })
+// Iniciar el servidor solo si el archivo se ejecuta directamente
+if (require.main === module) {
+    // CAMBIO: Se corrigió 'listem' y la interpolación de la variable ${PORT}
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
+    });
 }

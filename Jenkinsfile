@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        // Esto le dice al cliente que use una versión de API que sí entienda
+        DOCKER_API_VERSION = '1.44' 
+    }
 
     tools {
         nodejs "Node25"

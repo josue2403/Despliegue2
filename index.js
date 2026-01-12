@@ -115,10 +115,6 @@ app.get('/users/:id', (req, res) => {
 // ... (resto del código anterior igual)
 
 // Iniciar el servidor
-// CAMBIO: Se cambió 'listem' por 'listen'
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
-});
 
 module.exports = app;
 
